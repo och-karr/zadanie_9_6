@@ -55,5 +55,8 @@ function newGame() {
     playerNameElem.innerHTML = player.name;
     // setGamePoints(); // This function has not been created yet
   }
+}
 
+function playerPick(playerPick) {
+  console.log(playerPick);
 }
