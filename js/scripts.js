@@ -24,6 +24,7 @@ var computer = {
 var newGameElem = document.getElementById('js-newGameElement');
 var pickElem = document.getElementById('js-playerPickElement');
 var resultsElem = document.getElementById('js-resultsTableElement');
+var endGameElem = document.getElementById('js-endGameElement');
 
 //wyswietlanie elementow na stronie w zaleznosci od stanu gry
 function setGameElements() {
@@ -32,14 +33,17 @@ function setGameElements() {
         newGameElem.style.display = 'none';
         pickElem.style.display = 'block';
         resultsElem.style.display = 'block';
+        endGameElem.style.display = 'none';
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
+        endGameElem.style.display = 'block';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
+        endGameElem.style.display = 'none';
   }
 }
 
@@ -105,6 +109,9 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
         computerPointsElem.innerHTML = computer.score;
+        if (computer.score===10){
+          console.log('10');
+        }
     }
 
 }
@@ -125,3 +132,6 @@ function playerPick(playerPick) {
 //   computerPointsElem.innerHTML = computer.score;
 //   console.log(player.score);
 // }
+
+var playAgainBtn = document.getElementById('js-playAgainButton');
+playAgainBtn.addEventListener('click', newGame);
