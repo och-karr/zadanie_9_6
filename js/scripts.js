@@ -70,10 +70,6 @@ function newGame() {
   }
 }
 
-//funkcja wywolywana za kazdym razem gdy uzytkownicz wybierze inie
-function playerPick(playerPick) {
-  console.log(playerPick);
-}
 
 //ustawianie losowego wyboru gracza
 function getComputerPick() {
