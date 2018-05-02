@@ -34,12 +34,13 @@ function setGameElements() {
         pickElem.style.display = 'block';
         resultsElem.style.display = 'block';
         endGameElem.style.display = 'none';
-      break;
+        break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
         endGameElem.style.display = 'block';
+        // break;
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -137,11 +138,7 @@ function playerPick(playerPick) {
 // }
 
 function endGame() {
-    if (player.score===10) { 
-        gameState = 'ended';
-        setGameElements();
-    }
-    else if (computer.score===10) {
+    if (player.score===10 || computer.score===10) { 
         gameState = 'ended';
         setGameElements();
     }
